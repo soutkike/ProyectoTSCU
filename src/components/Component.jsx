@@ -17,8 +17,12 @@ const Component = () => {
 
   return (
     <div>
-      {initialState.length > 0 &&
-        initialState.map((e, i) => <li key={i}>{e}</li>)}
+      <h1>XD</h1>
+      <ul>
+        {initialState.map((e, i) => (
+          <li key={i}>{e.time}</li>
+        ))}
+      </ul>
     </div>
   );
 };
