@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Table from "../components/Table";
 import SideInfo from "../containers/SideInfo";
 import Card from "../components/Card";
+import Footer from "../components/Footer";
 function App() {
   return (
     <div className="container-fluid">
@@ -17,6 +18,8 @@ function App() {
           <Card display="100" description="Entradas" />
         </SideInfo>
       </div>
+      <div class="row"></div>
+      <Footer />
     </div>
   );
 }

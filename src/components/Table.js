@@ -7,7 +7,7 @@ class Table extends React.Component {
         <div className="w-75 mx-auto">
           <h1>Registro</h1>
           <div className="">
-            <div className="mt-4 mb-2 d-flex justify-content-between">
+            <div className="mt-4 mb-4 d-flex justify-content-between">
               <h3>Filtros:</h3>
               <button type="button" className="btn btn-primary btn-sm">
                 Entradas
