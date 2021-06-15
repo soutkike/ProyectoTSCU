@@ -1,6 +1,13 @@
 import React from "react";
 
 class Table extends React.Component {
+  setDateTime = (datetime) => {
+    const date = new Date(datetime);
+    const hour = date.toLocaleTimeString();
+    const day =
+      date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear();
+    return { day, hour };
+  };
   render() {
     return (
       <div className="col-9">
@@ -34,144 +41,16 @@ class Table extends React.Component {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">18:45:00</th>
-                <td>10/06/2021</td>
-                <td>Entrada</td>
-                <td>Puerta Principal</td>
-              </tr>
-              <tr>
-                <th scope="row">18:45:00</th>
-                <td>10/06/2021</td>
-                <td>Entrada</td>
-                <td>Puerta Principal</td>
-              </tr>
-              <tr>
-                <th scope="row">18:45:00</th>
-                <td>10/06/2021</td>
-                <td>Entrada</td>
-                <td>Puerta Principal</td>
-              </tr>
-              <tr>
-                <th scope="row">18:45:00</th>
-                <td>10/06/2021</td>
-                <td>Entrada</td>
-                <td>Puerta Principal</td>
-              </tr>
-              <tr>
-                <th scope="row">18:45:00</th>
-                <td>10/06/2021</td>
-                <td>Entrada</td>
-                <td>Puerta Principal</td>
-              </tr>
-              <tr>
-                <th scope="row">18:45:00</th>
-                <td>10/06/2021</td>
-                <td>Entrada</td>
-                <td>Puerta Principal</td>
-              </tr>
-              <tr>
-                <th scope="row">18:45:00</th>
-                <td>10/06/2021</td>
-                <td>Entrada</td>
-                <td>Puerta Principal</td>
-              </tr>
-              <tr>
-                <th scope="row">18:45:00</th>
-                <td>10/06/2021</td>
-                <td>Entrada</td>
-                <td>Puerta Principal</td>
-              </tr>
-              <tr>
-                <th scope="row">18:45:00</th>
-                <td>10/06/2021</td>
-                <td>Entrada</td>
-                <td>Puerta Principal</td>
-              </tr>
-              <tr>
-                <th scope="row">18:45:00</th>
-                <td>10/06/2021</td>
-                <td>Entrada</td>
-                <td>Puerta Principal</td>
-              </tr>
-              <tr>
-                <th scope="row">18:45:00</th>
-                <td>10/06/2021</td>
-                <td>Entrada</td>
-                <td>Puerta Principal</td>
-              </tr>
-              <tr>
-                <th scope="row">18:45:00</th>
-                <td>10/06/2021</td>
-                <td>Entrada</td>
-                <td>Puerta Principal</td>
-              </tr>
-              <tr>
-                <th scope="row">18:45:00</th>
-                <td>10/06/2021</td>
-                <td>Entrada</td>
-                <td>Puerta Principal</td>
-              </tr>
-              <tr>
-                <th scope="row">18:45:00</th>
-                <td>10/06/2021</td>
-                <td>Entrada</td>
-                <td>Puerta Principal</td>
-              </tr>
-              <tr>
-                <th scope="row">18:45:00</th>
-                <td>10/06/2021</td>
-                <td>Entrada</td>
-                <td>Puerta Principal</td>
-              </tr>
-              <tr>
-                <th scope="row">18:45:00</th>
-                <td>10/06/2021</td>
-                <td>Entrada</td>
-                <td>Puerta Principal</td>
-              </tr>
-              <tr>
-                <th scope="row">18:45:00</th>
-                <td>10/06/2021</td>
-                <td>Entrada</td>
-                <td>Puerta Principal</td>
-              </tr>
-              <tr>
-                <th scope="row">18:45:00</th>
-                <td>10/06/2021</td>
-                <td>Entrada</td>
-                <td>Puerta Principal</td>
-              </tr>
-              <tr>
-                <th scope="row">18:45:00</th>
-                <td>10/06/2021</td>
-                <td>Entrada</td>
-                <td>Puerta Principal</td>
-              </tr>
-              <tr>
-                <th scope="row">18:45:00</th>
-                <td>10/06/2021</td>
-                <td>Entrada</td>
-                <td>Puerta Principal</td>
-              </tr>
-              <tr>
-                <th scope="row">18:45:00</th>
-                <td>10/06/2021</td>
-                <td>Entrada</td>
-                <td>Puerta Principal</td>
-              </tr>
-              <tr>
-                <th scope="row">18:45:00</th>
-                <td>10/06/2021</td>
-                <td>Entrada</td>
-                <td>Puerta Principal</td>
-              </tr>
-              <tr>
-                <th scope="row">18:45:00</th>
-                <td>10/06/2021</td>
-                <td>Entrada</td>
-                <td>Puerta Principal</td>
-              </tr>
+              {this.props.data.map((reg) => {
+                return (
+                  <tr>
+                    <th scope="row">{this.setDateTime(reg.time).hour}</th>
+                    <td>{this.setDateTime(reg.time).day}</td>
+                    <td>{reg.type == "entry" ? "Entrada" : "Salida"}</td>
+                    <td>{reg.location}</td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
