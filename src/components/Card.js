@@ -5,7 +5,7 @@ class Card extends React.Component {
     return (
       <div className="card mx-auto shadow p-3 mb-5 bg-white rounded">
         <div className="card-body">
-          <h1 className="display-5 text-danger text-center">
+          <h1 className={`display-5  text-center ${this.props.textColor}`}>
             {this.props.display}
           </h1>
           <h1 className="display-6 text-center">{this.props.description}</h1>
