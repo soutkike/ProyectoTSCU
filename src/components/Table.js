@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 class Table extends React.Component {
+  state = {};
+
   setDateTime = (datetime) => {
     const date = new Date(datetime);
     const hour = date.toLocaleTimeString();
@@ -10,6 +12,8 @@ class Table extends React.Component {
   };
 
   render() {
+    const { data } = this.props;
+    console.log(data);
     return (
       <div className="col-9">
         <div className="w-75 mx-auto">
@@ -17,7 +21,13 @@ class Table extends React.Component {
           <div className="">
             <div className="mt-4  mb-4 d-flex justify-content-around">
               <h3>Filtros:</h3>
-              <button type="button" className="btn btn-primary btn-sm">
+              <button
+                type="button"
+                className="btn btn-primary btn-sm"
+                onClick={() => {
+                  console.log("click");
+                }}
+              >
                 Solo Entradas
               </button>
               <button type="button" className="btn btn-primary btn-sm">
