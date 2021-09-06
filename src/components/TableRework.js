@@ -25,7 +25,7 @@ const TableRework = ({ tableData }) => {
     const date = new Date(datetime);
     const hour = date.toLocaleTimeString();
     const day =
-      date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear();
+      date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
     return { day, hour };
   };
 
